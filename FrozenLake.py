@@ -99,22 +99,22 @@ def Q_learning():
         new_observation, reward, terminated, truncated, info = env.step(action)
 
         # get the maximum value of the next state
-        maximum_list = [value for i, value in enumerate(
+        available_actions = [value for i, value in enumerate(
             QTable[new_observation]) if CanMoveToNextState(new_observation, i)]
 
         # if the maximum list is empty, it means that the agent is in a hole
         # so we add the hole reward to the maximum list and decrease the hole reward
         # so next time the agent will not get stock in the hole
-        if not maximum_list:
+        if not available_actions:
             global hole_reward
-            maximum_list.append(hole_reward)
+            available_actions.append(hole_reward)
             hole_reward -= size
 
         # update the QTable
         global observation
         QTable[observation, action] = QTable[observation, action] + alpha * \
             (Rewards[new_observation] + gamma *
-             np.max(maximum_list) - QTable[observation, action])
+             np.max(available_actions) - QTable[observation, action])
 
         # update the Rewards
         Rewards[observation] = np.average(QTable[observation])
