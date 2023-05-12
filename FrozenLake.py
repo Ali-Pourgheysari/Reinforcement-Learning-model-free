@@ -107,8 +107,8 @@ def Q_learning():
         # so next time the agent will not get stock in the hole
         if not available_actions:
             global hole_reward
-            available_actions.append(hole_reward)
             hole_reward -= size
+            available_actions.append(hole_reward)
 
         # update the QTable
         global observation
