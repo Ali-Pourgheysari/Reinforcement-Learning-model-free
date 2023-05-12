@@ -116,4 +116,10 @@ def Q_learning():
 for _ in range(max_iter_number):
     Q_learning()
 
+while True:
+    action = np.argmax(QTable[observation])
+    observation, reward, terminated, truncated, info = env.step(action)
+    if terminated or truncated:
+        break
+
 env.close()
