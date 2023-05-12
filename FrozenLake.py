@@ -38,7 +38,7 @@ for i, rowVal in enumerate(env.unwrapped.spec.kwargs['desc']):
 # calculate if the agent can move to the next state
 
 
-def CanMoveToNextState(observation, action):
+def can_move_to_next_state(observation, action):
     if env.unwrapped.P[observation][action][0][1] == observation:
         return False
     else:
@@ -83,7 +83,7 @@ def choose_action():
     # If the action is not valid, choose the next action with the highest value
     i = 1
     while True:
-        if CanMoveToNextState(observation, action):
+        if can_move_to_next_state(observation, action):
             break
         action = sorted_list[i][1]
         i += 1
@@ -100,13 +100,13 @@ def Q_learning():
 
         # get the maximum value of the next state
         available_actions = [value for i, value in enumerate(
-            QTable[new_observation]) if CanMoveToNextState(new_observation, i)]
+            QTable[new_observation]) if can_move_to_next_state(new_observation, i)]
 
         # if the maximum list is empty, it means that the agent is in a hole
-        # so we add the hole reward to the maximum list and decrease the hole reward
-        # so next time the agent will not get stock in the hole
+        # so we add the hole reward to the available actions
         if not available_actions:
             global hole_reward
+            # decrease the hole reward so that the agent will try to avoid the holes
             hole_reward -= size
             available_actions.append(hole_reward)
 
