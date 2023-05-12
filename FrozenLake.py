@@ -6,7 +6,7 @@ from gymnasium.envs.toy_text.frozen_lake import generate_random_map
 # create Enviroment
 size = 16
 env = gym.make("FrozenLake-v1", desc=generate_random_map(size=size),
-               render_mode="human", is_slippery=False)
+               render_mode="human", is_slippery=True)
 
 observation, info = env.reset(seed=42)
 
