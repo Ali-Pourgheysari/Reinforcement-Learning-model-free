@@ -20,7 +20,7 @@ pip install gymnasium
 ### Output
 During the learning phase, the script prints the actions of the old state, the actions of the new state, the action chosen, the reward of the old state, and the reward of the new state for each iteration. The script updates the Q-Table and the Rewards matrix to optimize the agent's policy. After the learning phase, the script enters the test phase, where the agent follows the learned policy to reach the goal.
 
- Read the complete documentation [HERE](https://github.com/Ali-Pourgheysari/Reinforcement-Learning-model-based/Documentation.pdf).
+ Read the complete documentation [HERE](https://github.com/Ali-Pourgheysari/Reinforcement-Learning-model-based/blob/main/Documentation.pdf).
 Also you can read [THIS](FrozenLake_Code_review.pdf) code review for more details about the code.
 
 ## Part 2: Taxi Driver
