@@ -4,7 +4,7 @@
 ## Part 1: Frozen Lake
 
 ### Description
-The `frozen_lake.py` script demonstrates the application of Q-Learning to solve the Frozen Lake environment. The agent navigates through a grid world with slippery ice to reach the goal while avoiding holes. The Q-Table is updated using the Q-Learning algorithm, which gradually learns the optimal policy for maximizing rewards.
+The `FrozenLake.py` script demonstrates the application of Q-Learning to solve the Frozen Lake environment. The agent navigates through a grid world with slippery ice to reach the goal while avoiding holes. The Q-Table is updated using the Q-Learning algorithm, which gradually learns the optimal policy for maximizing rewards.
 
 ### Requirements
 * Python 3.x
@@ -26,7 +26,7 @@ Also you can read [THIS](FrozenLake_Code_review.pdf) code review for more detail
 ## Part 2: Taxi Driver
 
 ### Description
-The `taxi_driver.py` script demonstrates the application of Q-Learning to solve the Taxi Driver environment. The agent navigates through a grid world to pick up and drop off passengers at the correct locations. The Q-Table is updated using the Q-Learning algorithm, which gradually learns the optimal policy for maximizing rewards.
+The `Taxi.py` script demonstrates the application of Q-Learning to solve the Taxi Driver environment. The agent navigates through a grid world to pick up and drop off passengers at the correct locations. The Q-Table is updated using the Q-Learning algorithm, which gradually learns the optimal policy for maximizing rewards.
 
 ### Requirements
 * Python 3.x
